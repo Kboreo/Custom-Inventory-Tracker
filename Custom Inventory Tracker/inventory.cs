@@ -32,7 +32,7 @@ namespace Custom_Inventory_Tracker
             SqlCommand cmd = con.CreateCommand();   //Create SqlCommand for the 'con' Connection
             cmd.CommandType = CommandType.Text; //CommandType for cmd is set to text
             cmd.CommandText = "select * from invMaterial";   //selects all data in the table1 database
-            cmd.ExecuteNonQuery();  //Execute command
+            cmd.ExecuteNonQuery();  //Execute command 
             DataTable dt = new DataTable(); //Creates new datatable dt
             SqlDataAdapter da = new SqlDataAdapter(cmd);    //Creates new data adapter da
             da.Fill(dt);    //Fills data table dt with data from the database 
