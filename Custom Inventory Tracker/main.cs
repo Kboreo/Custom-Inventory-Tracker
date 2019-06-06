@@ -57,8 +57,21 @@ namespace Custom_Inventory_Tracker
             string databasePath = AppDomain.CurrentDomain.BaseDirectory; //Get file path of directory that program is running in           
             string dbPath = "AttachDbFilename=" + databasePath + "Database.mdf;"; //String for Database file location
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" + dbPath + "Integrated Security=True;" + "Connect Timeout=30"); //Create Connection to Database
-            con.Open(); //Open Database Connection
-            con.Close();    //Close Database Connection
+            //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" + dbPath + "Integrated Security=True;" + "Connect Timeout=30"); //Create Connection to Database
+
+            try
+            {
+                con.Open(); //Open Database Connection
+                con.Close();    //Close Database Connection
+            }
+            catch (SqlException ex) //Exception checking for Sql Connection
+            {
+                MessageBox.Show($"Can not open connection ! ErrorCode: {ex.ErrorCode} Error: {ex.Message}");    //Display error code and a error message in message box
+            }
+            catch (Exception ex)    //Exception checking 
+            {
+                MessageBox.Show($"Can not open connection ! Error: {ex.Message}");  //Display Message box showing the message  
+            }
             MessageBox.Show("Success!");
         }
 
@@ -66,6 +79,12 @@ namespace Custom_Inventory_Tracker
         {
             inventory i2 = new inventory(); //Creates new "Inventory" form
             i2.Show();  //Shows "Inventory" form
+        }
+
+        private void addMaterialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addMaterialForm f2 = new addMaterialForm(); //Creates new "Add Material" form
+            f2.Show();  //Shows "Add Material" form
         }
     }
 }

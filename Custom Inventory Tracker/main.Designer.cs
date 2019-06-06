@@ -35,9 +35,9 @@
             this.addItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMaterialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TestBtn = new System.Windows.Forms.Button();
-            this.viewInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(729, 24);
             this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Text = "mainMenuStrip";
             // 
             // fileToolStripMenuItem
             // 
@@ -68,21 +68,21 @@
             // newInventoryToolStripMenuItem
             // 
             this.newInventoryToolStripMenuItem.Name = "newInventoryToolStripMenuItem";
-            this.newInventoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newInventoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newInventoryToolStripMenuItem.Text = "New Inventory";
             this.newInventoryToolStripMenuItem.Click += new System.EventHandler(this.newInventoryToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // addItemToolStripMenuItem
             // 
             this.addItemToolStripMenuItem.Name = "addItemToolStripMenuItem";
-            this.addItemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addItemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addItemToolStripMenuItem.Text = "Add Item";
             // 
             // addMaterialToolStripMenuItem
@@ -90,13 +90,21 @@
             this.addMaterialToolStripMenuItem.Name = "addMaterialToolStripMenuItem";
             this.addMaterialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addMaterialToolStripMenuItem.Text = "Add Material";
+            this.addMaterialToolStripMenuItem.Click += new System.EventHandler(this.addMaterialToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // viewInventoryToolStripMenuItem
+            // 
+            this.viewInventoryToolStripMenuItem.Name = "viewInventoryToolStripMenuItem";
+            this.viewInventoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewInventoryToolStripMenuItem.Text = "View Inventory";
+            this.viewInventoryToolStripMenuItem.Click += new System.EventHandler(this.viewInventoryToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -114,13 +122,6 @@
             this.TestBtn.Text = "Test";
             this.TestBtn.UseVisualStyleBackColor = true;
             this.TestBtn.Click += new System.EventHandler(this.TestBtn_Click);
-            // 
-            // viewInventoryToolStripMenuItem
-            // 
-            this.viewInventoryToolStripMenuItem.Name = "viewInventoryToolStripMenuItem";
-            this.viewInventoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.viewInventoryToolStripMenuItem.Text = "View Inventory";
-            this.viewInventoryToolStripMenuItem.Click += new System.EventHandler(this.viewInventoryToolStripMenuItem_Click);
             // 
             // mainForm
             // 
