@@ -28,11 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.filTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addItemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addItemToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorTypeComBox = new System.Windows.Forms.ComboBox();
+            this.venTypeComBox = new System.Windows.Forms.ComboBox();
+            this.matTypeComBox = new System.Windows.Forms.ComboBox();
+            this.sizeTextBox = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -48,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(189, 58);
+            this.label2.Location = new System.Drawing.Point(221, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 1;
@@ -57,7 +73,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(261, 58);
+            this.label3.Location = new System.Drawing.Point(391, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 2;
@@ -66,7 +82,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(341, 58);
+            this.label4.Location = new System.Drawing.Point(569, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 3;
@@ -75,24 +91,132 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(417, 58);
+            this.label5.Location = new System.Drawing.Point(646, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Material:";
             // 
+            // filTypeComboBox
+            // 
+            this.filTypeComboBox.FormattingEnabled = true;
+            this.filTypeComboBox.Items.AddRange(new object[] {
+            "N/A",
+            "ABS",
+            "PETG",
+            "PLA",
+            "PLA+"});
+            this.filTypeComboBox.Location = new System.Drawing.Point(74, 75);
+            this.filTypeComboBox.Name = "filTypeComboBox";
+            this.filTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.filTypeComboBox.TabIndex = 5;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addItemToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(124, 26);
+            // 
+            // addItemToolStripMenuItem
+            // 
+            this.addItemToolStripMenuItem.Name = "addItemToolStripMenuItem";
+            this.addItemToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.addItemToolStripMenuItem.Text = "Add Item";
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addItemToolStripMenuItem1});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(124, 26);
+            // 
+            // addItemToolStripMenuItem1
+            // 
+            this.addItemToolStripMenuItem1.Name = "addItemToolStripMenuItem1";
+            this.addItemToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.addItemToolStripMenuItem1.Text = "Add Item";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(820, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addItemToolStripMenuItem2});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // addItemToolStripMenuItem2
+            // 
+            this.addItemToolStripMenuItem2.Name = "addItemToolStripMenuItem2";
+            this.addItemToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.addItemToolStripMenuItem2.Text = "Add Material Type";
+            this.addItemToolStripMenuItem2.Click += new System.EventHandler(this.addItemToolStripMenuItem2_Click);
+            // 
+            // colorTypeComBox
+            // 
+            this.colorTypeComBox.FormattingEnabled = true;
+            this.colorTypeComBox.Location = new System.Drawing.Point(224, 75);
+            this.colorTypeComBox.Name = "colorTypeComBox";
+            this.colorTypeComBox.Size = new System.Drawing.Size(121, 21);
+            this.colorTypeComBox.TabIndex = 9;
+            // 
+            // venTypeComBox
+            // 
+            this.venTypeComBox.FormattingEnabled = true;
+            this.venTypeComBox.Location = new System.Drawing.Point(394, 75);
+            this.venTypeComBox.Name = "venTypeComBox";
+            this.venTypeComBox.Size = new System.Drawing.Size(121, 21);
+            this.venTypeComBox.TabIndex = 10;
+            // 
+            // matTypeComBox
+            // 
+            this.matTypeComBox.FormattingEnabled = true;
+            this.matTypeComBox.Location = new System.Drawing.Point(649, 75);
+            this.matTypeComBox.Name = "matTypeComBox";
+            this.matTypeComBox.Size = new System.Drawing.Size(121, 21);
+            this.matTypeComBox.TabIndex = 11;
+            // 
+            // sizeTextBox
+            // 
+            this.sizeTextBox.Location = new System.Drawing.Point(572, 75);
+            this.sizeTextBox.Name = "sizeTextBox";
+            this.sizeTextBox.Size = new System.Drawing.Size(49, 20);
+            this.sizeTextBox.TabIndex = 12;
+            // 
             // addMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 186);
+            this.ClientSize = new System.Drawing.Size(820, 186);
+            this.Controls.Add(this.sizeTextBox);
+            this.Controls.Add(this.matTypeComBox);
+            this.Controls.Add(this.venTypeComBox);
+            this.Controls.Add(this.colorTypeComBox);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.filTypeComboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "addMaterialForm";
             this.Text = "addMaterialForm";
+            this.Load += new System.EventHandler(this.addMaterialForm_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +229,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem addItemToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem addItemToolStripMenuItem1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addItemToolStripMenuItem2;
+        public System.Windows.Forms.ComboBox filTypeComboBox;
+        public System.Windows.Forms.ComboBox colorTypeComBox;
+        public System.Windows.Forms.ComboBox venTypeComBox;
+        public System.Windows.Forms.ComboBox matTypeComBox;
+        private System.Windows.Forms.TextBox sizeTextBox;
     }
 }

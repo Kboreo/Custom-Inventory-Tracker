@@ -21,5 +21,19 @@ namespace Custom_Inventory_Tracker
         {
 
         }
+
+        private void addItemToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            addMaterialTypeForm f2 = new addMaterialTypeForm(); //Creates new "Add Material" form
+            f2.Show();  //Shows "Add Material" form
+            this.Close();   //Closes Current Material Type Form
+        }
+
+        private void addMaterialForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
