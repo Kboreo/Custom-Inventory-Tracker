@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.filTypeComboBox = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +43,6 @@
             this.addItemToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.colorTypeComBox = new System.Windows.Forms.ComboBox();
             this.venTypeComBox = new System.Windows.Forms.ComboBox();
-            this.matTypeComBox = new System.Windows.Forms.ComboBox();
             this.sizeTextBox = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
@@ -87,15 +85,6 @@
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Size (Kg):";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(646, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Material:";
             // 
             // filTypeComboBox
             // 
@@ -178,14 +167,6 @@
             this.venTypeComBox.Size = new System.Drawing.Size(121, 21);
             this.venTypeComBox.TabIndex = 10;
             // 
-            // matTypeComBox
-            // 
-            this.matTypeComBox.FormattingEnabled = true;
-            this.matTypeComBox.Location = new System.Drawing.Point(649, 75);
-            this.matTypeComBox.Name = "matTypeComBox";
-            this.matTypeComBox.Size = new System.Drawing.Size(121, 21);
-            this.matTypeComBox.TabIndex = 11;
-            // 
             // sizeTextBox
             // 
             this.sizeTextBox.Location = new System.Drawing.Point(572, 75);
@@ -199,12 +180,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 186);
             this.Controls.Add(this.sizeTextBox);
-            this.Controls.Add(this.matTypeComBox);
             this.Controls.Add(this.venTypeComBox);
             this.Controls.Add(this.colorTypeComBox);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.filTypeComboBox);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -228,7 +207,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem addItemToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
@@ -239,7 +217,6 @@
         public System.Windows.Forms.ComboBox filTypeComboBox;
         public System.Windows.Forms.ComboBox colorTypeComBox;
         public System.Windows.Forms.ComboBox venTypeComBox;
-        public System.Windows.Forms.ComboBox matTypeComBox;
         private System.Windows.Forms.TextBox sizeTextBox;
     }
 }

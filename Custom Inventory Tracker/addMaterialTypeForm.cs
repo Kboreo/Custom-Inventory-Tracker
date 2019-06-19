@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Custom_Inventory_Tracker
 {
@@ -29,6 +31,7 @@ namespace Custom_Inventory_Tracker
 
         private void addItem()
         {
+
             string addValue = ""; //Value to add to the Combo Box of choice
             string comboValue = ""; //Type that the user wants to add an option too
 
@@ -55,14 +58,7 @@ namespace Custom_Inventory_Tracker
                 matForm.venTypeComBox.Items.Add(addValue);  //Adds Value to comboBox
                 this.Hide();    //Hides Current Form
                 matForm.Show(); //Shows matForm Form
-            }
-            else if (comboValue == "Material")
-            {
-                var matForm = new addMaterialForm();    //Creates New "matForm" Type
-                matForm.matTypeComBox.Items.Add(addValue);  //Adds Value to comboBox
-                this.Hide();    //Hides Current Form
-                matForm.Show(); //Shows matForm Form
-            }
+            }           
             else
             {
 

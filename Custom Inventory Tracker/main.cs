@@ -83,8 +83,8 @@ namespace Custom_Inventory_Tracker
 
         private void addMaterialToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addMaterialForm f2 = new addMaterialForm(); //Creates new "Add Material" form
-            f2.Show();  //Shows "Add Material" form
+            addMaterialForm f2 = new addMaterialForm(); //Creates new "Add Material Type" form
+            f2.Show();  //Shows "Add Material Type" form
         }
     }
 }
