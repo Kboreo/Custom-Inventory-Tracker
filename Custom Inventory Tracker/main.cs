@@ -11,7 +11,7 @@ using System.Data.SqlClient;    //For using Sql Databases
 
 
 namespace Custom_Inventory_Tracker
-{    
+{
     public partial class mainForm : Form
     {
         public mainForm()
@@ -86,5 +86,12 @@ namespace Custom_Inventory_Tracker
             addMaterialForm f2 = new addMaterialForm(); //Creates new "Add Material Type" form
             f2.Show();  //Shows "Add Material Type" form
         }
+    }
+
+    //Class for Global Vars
+    public static class Globals
+    {
+        public const string xmlFilePath = @"C:\Users\Kodey\Desktop\dat new\invMenus.xml";   //File path for xmls that can't be changed unless while program is running,
+        //public const string xmlFilePath = "invMenus.xml";   //File path for xmls that can't be changed unless while program is running,
     }
 }
