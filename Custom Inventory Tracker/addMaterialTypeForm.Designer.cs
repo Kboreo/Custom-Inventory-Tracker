@@ -38,7 +38,7 @@
             // 
             // okBtn
             // 
-            this.okBtn.Location = new System.Drawing.Point(81, 123);
+            this.okBtn.Location = new System.Drawing.Point(12, 123);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
             this.okBtn.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(189, 123);
+            this.cancelBtn.Location = new System.Drawing.Point(127, 123);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 1;
@@ -98,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 158);
+            this.ClientSize = new System.Drawing.Size(214, 158);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.addTextBox);
@@ -106,7 +106,7 @@
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.okBtn);
             this.Name = "addMaterialTypeForm";
-            this.Text = "addItemForm";
+            this.Text = "Add New Item";
             this.Load += new System.EventHandler(this.addMaterialTypeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

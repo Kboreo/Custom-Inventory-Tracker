@@ -98,5 +98,10 @@ namespace Custom_Inventory_Tracker
             types.Sort();   //Sort List
             vendorTypeComboBox.DataSource = types; //Add list to ComboBox
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();   //Closes Form
+        }
     }
 }
