@@ -41,8 +41,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addItemToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.colorTypeComBox = new System.Windows.Forms.ComboBox();
-            this.venTypeComBox = new System.Windows.Forms.ComboBox();
+            this.colorTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.vendorTypeComboBox = new System.Windows.Forms.ComboBox();
             this.sizeTextBox = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
@@ -150,21 +150,21 @@
             this.addItemToolStripMenuItem2.Text = "Add Material Type";
             this.addItemToolStripMenuItem2.Click += new System.EventHandler(this.addItemToolStripMenuItem2_Click);
             // 
-            // colorTypeComBox
+            // colorTypeComboBox
             // 
-            this.colorTypeComBox.FormattingEnabled = true;
-            this.colorTypeComBox.Location = new System.Drawing.Point(224, 75);
-            this.colorTypeComBox.Name = "colorTypeComBox";
-            this.colorTypeComBox.Size = new System.Drawing.Size(121, 21);
-            this.colorTypeComBox.TabIndex = 9;
+            this.colorTypeComboBox.FormattingEnabled = true;
+            this.colorTypeComboBox.Location = new System.Drawing.Point(224, 75);
+            this.colorTypeComboBox.Name = "colorTypeComboBox";
+            this.colorTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.colorTypeComboBox.TabIndex = 9;
             // 
-            // venTypeComBox
+            // vendorTypeComboBox
             // 
-            this.venTypeComBox.FormattingEnabled = true;
-            this.venTypeComBox.Location = new System.Drawing.Point(394, 75);
-            this.venTypeComBox.Name = "venTypeComBox";
-            this.venTypeComBox.Size = new System.Drawing.Size(121, 21);
-            this.venTypeComBox.TabIndex = 10;
+            this.vendorTypeComboBox.FormattingEnabled = true;
+            this.vendorTypeComboBox.Location = new System.Drawing.Point(394, 75);
+            this.vendorTypeComboBox.Name = "vendorTypeComboBox";
+            this.vendorTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.vendorTypeComboBox.TabIndex = 10;
             // 
             // sizeTextBox
             // 
@@ -179,8 +179,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 186);
             this.Controls.Add(this.sizeTextBox);
-            this.Controls.Add(this.venTypeComBox);
-            this.Controls.Add(this.colorTypeComBox);
+            this.Controls.Add(this.vendorTypeComboBox);
+            this.Controls.Add(this.colorTypeComboBox);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.filamentTypeComboBox);
             this.Controls.Add(this.label4);
@@ -214,8 +214,8 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addItemToolStripMenuItem2;
         public System.Windows.Forms.ComboBox filamentTypeComboBox;
-        public System.Windows.Forms.ComboBox colorTypeComBox;
-        public System.Windows.Forms.ComboBox venTypeComBox;
+        public System.Windows.Forms.ComboBox colorTypeComboBox;
+        public System.Windows.Forms.ComboBox vendorTypeComboBox;
         private System.Windows.Forms.TextBox sizeTextBox;
     }
 }

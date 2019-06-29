@@ -42,7 +42,7 @@ namespace Custom_Inventory_Tracker
             {
                 XDocument doc = XDocument.Load(Globals.xmlFilePath);     //Creates new Xdoc
                 XElement edit = doc.Root;   //New element equal to the root of the XML File
-                edit.Element("addMaterialForm").Element("filamentType").Add(new XElement("Type", addTextBox.Text)); // Add a new <Type> Element with a value taken from a text box            
+                edit.Element("addMaterialForm").Element("filamentType").Add(new XElement("FilType", addTextBox.Text)); // Add a new <Type> Element with a value taken from a text box            
                 doc.Save(Globals.xmlFilePath);   //Save XML file
                 var matForm = new addMaterialForm();    //Creates New "matForm" Type                
                 this.Hide();    //Hides Current Form
@@ -50,21 +50,27 @@ namespace Custom_Inventory_Tracker
             }
             else if (comboValue == "Color")
             {
+                XDocument doc = XDocument.Load(Globals.xmlFilePath);     //Creates new Xdoc
+                XElement edit = doc.Root;   //New element equal to the root of the XML File
+                edit.Element("addMaterialForm").Element("Color").Add(new XElement("ColorType", addTextBox.Text)); // Add a new <Type> Element with a value taken from a text box            
+                doc.Save(Globals.xmlFilePath);   //Save XML file
                 var matForm = new addMaterialForm();    //Creates New "matForm" Type
-                matForm.colorTypeComBox.Items.Add(addValue);  //Adds Value to comboBox
                 this.Hide();    //Hides Current Form
                 matForm.Show(); //Shows matForm Form
             }
             else if (comboValue == "Vendor")
             {
+                XDocument doc = XDocument.Load(Globals.xmlFilePath);     //Creates new Xdoc
+                XElement edit = doc.Root;   //New element equal to the root of the XML File
+                edit.Element("addMaterialForm").Element("Vendor").Add(new XElement("VendorType", addTextBox.Text)); // Add a new <Type> Element with a value taken from a text box            
+                doc.Save(Globals.xmlFilePath);   //Save XML file
                 var matForm = new addMaterialForm();    //Creates New "matForm" Type
-                matForm.venTypeComBox.Items.Add(addValue);  //Adds Value to comboBox
                 this.Hide();    //Hides Current Form
                 matForm.Show(); //Shows matForm Form
             }           
             else
             {
-
+                MessageBox.Show("Sorry something went wrong, please try again!");
             }
             
         }
@@ -85,10 +91,20 @@ namespace Custom_Inventory_Tracker
                 xWriter.WriteStartElement("menus");    //"root" <menus>
                 xWriter.WriteStartElement("addMaterialForm");    //<addMaterialForm>
                 xWriter.WriteStartElement("filamentType");    //<filamentType>
-                xWriter.WriteStartElement("Type");    //<Type>
+                xWriter.WriteStartElement("FilType");    //<Type>
                 xWriter.WriteString("PLA");
                 xWriter.WriteEndElement(); //</Type>
                 xWriter.WriteEndElement(); //</filamentType>
+                xWriter.WriteStartElement("Color");    //<Color>
+                xWriter.WriteStartElement("ColorType");    //<Type>
+                xWriter.WriteString("Blue");
+                xWriter.WriteEndElement(); //</Type>
+                xWriter.WriteEndElement(); //</Color>
+                xWriter.WriteStartElement("Vendor");    //<Vendor>
+                xWriter.WriteStartElement("VendorType");    //<Type>
+                xWriter.WriteString("Amazon");
+                xWriter.WriteEndElement(); //</Type>
+                xWriter.WriteEndElement(); //</Vendor>
                 xWriter.WriteEndElement(); //</addMaterialForm>
                 xWriter.WriteEndElement(); //</menus>
                 xWriter.Close();
