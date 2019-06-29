@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.filTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.filamentTypeComboBox = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -85,19 +85,19 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Size (Kg):";
             // 
-            // filTypeComboBox
+            // filamentTypeComboBox
             // 
-            this.filTypeComboBox.FormattingEnabled = true;
-            this.filTypeComboBox.Items.AddRange(new object[] {
+            this.filamentTypeComboBox.FormattingEnabled = true;
+            this.filamentTypeComboBox.Items.AddRange(new object[] {
             "N/A",
             "ABS",
             "PETG",
             "PLA",
             "PLA+"});
-            this.filTypeComboBox.Location = new System.Drawing.Point(74, 75);
-            this.filTypeComboBox.Name = "filTypeComboBox";
-            this.filTypeComboBox.Size = new System.Drawing.Size(121, 21);
-            this.filTypeComboBox.TabIndex = 5;
+            this.filamentTypeComboBox.Location = new System.Drawing.Point(74, 75);
+            this.filamentTypeComboBox.Name = "filamentTypeComboBox";
+            this.filamentTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.filamentTypeComboBox.TabIndex = 5;
             // 
             // contextMenuStrip1
             // 
@@ -146,7 +146,7 @@
             // addItemToolStripMenuItem2
             // 
             this.addItemToolStripMenuItem2.Name = "addItemToolStripMenuItem2";
-            this.addItemToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.addItemToolStripMenuItem2.Size = new System.Drawing.Size(170, 22);
             this.addItemToolStripMenuItem2.Text = "Add Material Type";
             this.addItemToolStripMenuItem2.Click += new System.EventHandler(this.addItemToolStripMenuItem2_Click);
             // 
@@ -182,7 +182,7 @@
             this.Controls.Add(this.venTypeComBox);
             this.Controls.Add(this.colorTypeComBox);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.filTypeComboBox);
+            this.Controls.Add(this.filamentTypeComboBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -213,7 +213,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addItemToolStripMenuItem2;
-        public System.Windows.Forms.ComboBox filTypeComboBox;
+        public System.Windows.Forms.ComboBox filamentTypeComboBox;
         public System.Windows.Forms.ComboBox colorTypeComBox;
         public System.Windows.Forms.ComboBox venTypeComBox;
         private System.Windows.Forms.TextBox sizeTextBox;

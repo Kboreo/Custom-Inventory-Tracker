@@ -41,7 +41,7 @@ namespace Custom_Inventory_Tracker
             if (comboValue == "Filament Type")
             {
                 var matForm = new addMaterialForm();    //Creates New "matForm" Type
-                matForm.filTypeComboBox.Items.Add(addValue);  //Adds Value to comboBox
+                matForm.filamentTypeComboBox.Items.Add(addValue);  //Adds Value to comboBox
                 this.Hide();    //Hides Current Form
                 matForm.Show(); //Shows matForm Form
 

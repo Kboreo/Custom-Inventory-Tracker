@@ -62,6 +62,10 @@ namespace Custom_Inventory_Tracker
         private void loadFilamentComboBox()
         {
             checkForFile(); // Check if Xml file exists
+            var document = XDocument.Load(Globals.xmlFilePath); //Add new XDocument
+            var types = document.Descendants("Type").Select(element => element.Value).ToList(); //Create new var list with all the values of the "Type" Element
+            types.Sort();   //Sort List
+            filamentTypeComboBox.DataSource = types; //Add list to ComboBox
         }
     }
 }
