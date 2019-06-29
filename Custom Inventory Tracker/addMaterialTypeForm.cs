@@ -40,17 +40,13 @@ namespace Custom_Inventory_Tracker
 
             if (comboValue == "Filament Type")
             {
-                var matForm = new addMaterialForm();    //Creates New "matForm" Type
-                matForm.filamentTypeComboBox.Items.Add(addValue);  //Adds Value to comboBox
-                this.Hide();    //Hides Current Form
-                matForm.Show(); //Shows matForm Form
-
                 XDocument doc = XDocument.Load(Globals.xmlFilePath);     //Creates new Xdoc
                 XElement edit = doc.Root;   //New element equal to the root of the XML File
-
                 edit.Element("addMaterialForm").Element("filamentType").Add(new XElement("Type", addTextBox.Text)); // Add a new <Type> Element with a value taken from a text box            
-                doc.Save(Globals.xmlFilePath);   //Save XML file  
-
+                doc.Save(Globals.xmlFilePath);   //Save XML file
+                var matForm = new addMaterialForm();    //Creates New "matForm" Type                
+                this.Hide();    //Hides Current Form
+                matForm.Show(); //Shows matForm Form
             }
             else if (comboValue == "Color")
             {
