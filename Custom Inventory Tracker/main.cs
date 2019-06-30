@@ -19,11 +19,6 @@ namespace Custom_Inventory_Tracker
             InitializeComponent();
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Created By Kodey!");   //Pop-up message box for "About"
@@ -56,13 +51,12 @@ namespace Custom_Inventory_Tracker
         {            
             string databasePath = AppDomain.CurrentDomain.BaseDirectory; //Get file path of directory that program is running in           
             string dbPath = "AttachDbFilename=" + databasePath + "Database.mdf;"; //String for Database file location
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" + dbPath + "Integrated Security=True;" + "Connect Timeout=30"); //Create Connection to Database
-            //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" + dbPath + "Integrated Security=True;" + "Connect Timeout=30"); //Create Connection to Database
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" + dbPath + "Integrated Security=True;" + "Connect Timeout=30"); //Create Connection to Database            
 
             try
             {
-                con.Open(); //Open Database Connection
-                con.Close();    //Close Database Connection
+                sqlConnection.Open(); //Open Database Connection
+                sqlConnection.Close();    //Close Database Connection
             }
             catch (SqlException ex) //Exception checking for Sql Connection
             {
@@ -93,5 +87,8 @@ namespace Custom_Inventory_Tracker
     {
         public const string xmlFilePath = @"C:\Users\Kodey\Desktop\dat new\invMenus.xml";   //File path for xmls that can't be changed unless while program is running,
         //public const string xmlFilePath = "invMenus.xml";   //File path for xmls that can't be changed unless while program is running,
+                
     }
+
+    
 }

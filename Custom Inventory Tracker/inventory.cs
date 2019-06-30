@@ -13,7 +13,11 @@ namespace Custom_Inventory_Tracker
 {
     public partial class inventory : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" + "AttachDbFilename=" + AppDomain.CurrentDomain.BaseDirectory + "Database.mdf;" + "Integrated Security=True;" + "Connect Timeout=30"); //Create Connection to Database
+        //For Final Version
+        //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" + "AttachDbFilename=" + AppDomain.CurrentDomain.BaseDirectory + "Database.mdf;" + "Integrated Security=True;" + "Connect Timeout=30"); //Create Connection to Database
+        //Debugging/Testing Version
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Kodey\Documents\Inentorytrackertest.mdf;Integrated Security=True;Connect Timeout=30"); //Create Connection to Database            
+
         public inventory()
         {
             InitializeComponent();
@@ -29,16 +33,16 @@ namespace Custom_Inventory_Tracker
         {
             try
             {
-                con.Open(); //Open Connection con
-                SqlCommand cmd = con.CreateCommand();   //Create SqlCommand for the 'con' Connection
+                sqlConnection.Open(); //Open Connection con
+                SqlCommand cmd = sqlConnection.CreateCommand();   //Create SqlCommand for the 'con' Connection
                 cmd.CommandType = CommandType.Text; //CommandType for cmd is set to text
                 cmd.CommandText = "select * from invMaterial";   //selects all data in the table1 database
                 cmd.ExecuteNonQuery();  //Execute command 
                 DataTable dt = new DataTable(); //Creates new datatable dt
                 SqlDataAdapter da = new SqlDataAdapter(cmd);    //Creates new data adapter da
                 da.Fill(dt);    //Fills data table dt with data from the database 
-                dataGridView1.DataSource = dt;  //Sets the datasource in dataGridView1 equal to the data in dt
-                con.Close();
+                materialInventoryDataGrid.DataSource = dt;  //Sets the datasource in dataGridView1 equal to the data in dt
+                sqlConnection.Close();
             }
 
             catch (SqlException ex) //Exception checking for Sql Connection

@@ -71,9 +71,9 @@
             // 
             // addTextBox
             // 
-            this.addTextBox.Location = new System.Drawing.Point(65, 87);
+            this.addTextBox.Location = new System.Drawing.Point(50, 87);
             this.addTextBox.Name = "addTextBox";
-            this.addTextBox.Size = new System.Drawing.Size(106, 20);
+            this.addTextBox.Size = new System.Drawing.Size(121, 20);
             this.addTextBox.TabIndex = 3;
             // 
             // label1

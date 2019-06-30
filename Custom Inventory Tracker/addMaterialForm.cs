@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Xml;
-using System.Xml.Linq;
+using System.IO;    //For handling Input and Output
+using System.Xml;   //For Handling Xml Files
+using System.Xml.Linq;  //For Handling/Editing/Parsing Xml Files
+using System.Data.SqlClient;    //For using Sql Databases
 
 namespace Custom_Inventory_Tracker
 {
@@ -103,5 +104,45 @@ namespace Custom_Inventory_Tracker
         {
             this.Close();   //Closes Form
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(sizeTextBox.Text))
+            {
+                MessageBox.Show("Sorry, there was an error.  Please try again!");
+            }
+            else
+            {
+                //For final Build
+                //string databasePath = AppDomain.CurrentDomain.BaseDirectory; //Get file path of directory that program is running in           
+                //string dbPath = "AttachDbFilename=" + databasePath + "Database.mdf;"; //String for Database file location
+                //SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;" + dbPath + "Integrated Security=True;" + "Connect Timeout=30"); //Create Connection to Database            
+
+                //For testing/Debugging                
+                SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Kodey\Documents\Inentorytrackertest.mdf;Integrated Security=True;Connect Timeout=30"); //Create Connection to Database            
+
+                try
+                {
+                    decimal size = Convert.ToDecimal(sizeTextBox.Text);
+                    sqlConnection.Open(); //Open Database Connection
+                    SqlCommand cmd = sqlConnection.CreateCommand();   //Create SqlCommand for the 'sqlConnection' Connection
+                    cmd.CommandType = CommandType.Text; //CommandType for cmd is set to text
+                    cmd.CommandText = "insert into invMaterial values('"+this.filamentTypeComboBox.SelectedItem.ToString()+"','"+this.colorTypeComboBox.SelectedItem.ToString() + "','"+this.vendorTypeComboBox.SelectedItem.ToString()+ "','"+size+"')";
+                    cmd.ExecuteNonQuery();  //Execute Command
+                    sqlConnection.Close();  //Close Connection                    
+                    sqlConnection.Close();    //Close Database Connection
+                    this.Close();   //Closes Form
+                    MessageBox.Show("Success!");
+                }
+                catch (SqlException ex) //Exception checking for Sql Connection
+                {
+                    MessageBox.Show($"Can not open connection ! ErrorCode: {ex.ErrorCode} Error: {ex.Message}");    //Display error code and a error message in message box
+                }
+                catch (Exception ex)    //Exception checking 
+                {
+                    MessageBox.Show($"Can not open connection ! Error: {ex.Message}");  //Display Message box showing the message  
+                }                
+            }
+        }        
     }
 }
