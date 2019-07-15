@@ -148,7 +148,7 @@
             // AddMaterialToolStripItem
             // 
             this.AddMaterialToolStripItem.Name = "AddMaterialToolStripItem";
-            this.AddMaterialToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.AddMaterialToolStripItem.Size = new System.Drawing.Size(170, 22);
             this.AddMaterialToolStripItem.Text = "Add Material Type";
             this.AddMaterialToolStripItem.Click += new System.EventHandler(this.addItemToolStripMenuItem2_Click);
             // 
@@ -213,6 +213,7 @@
             this.Controls.Add(this.label1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "addMaterialForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Material";
             this.Load += new System.EventHandler(this.addMaterialForm_Load);
             this.contextMenuStrip1.ResumeLayout(false);

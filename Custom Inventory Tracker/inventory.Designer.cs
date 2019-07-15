@@ -47,6 +47,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.materialInventoryDataGrid);
             this.Name = "inventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Material Inventory";
             this.Load += new System.EventHandler(this.inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.materialInventoryDataGrid)).EndInit();

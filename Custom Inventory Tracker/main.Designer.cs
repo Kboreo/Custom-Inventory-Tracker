@@ -33,8 +33,8 @@
             this.newInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addMaterialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMaterialInventoryToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TestBtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -83,19 +83,19 @@
             this.addMaterialToolStripMenuItem.Text = "Add Material";
             this.addMaterialToolStripMenuItem.Click += new System.EventHandler(this.addMaterialToolStripMenuItem_Click);
             // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
-            // 
             // viewMaterialInventoryToolStrip
             // 
             this.viewMaterialInventoryToolStrip.Name = "viewMaterialInventoryToolStrip";
             this.viewMaterialInventoryToolStrip.Size = new System.Drawing.Size(198, 22);
             this.viewMaterialInventoryToolStrip.Text = "View Material Inventory";
             this.viewMaterialInventoryToolStrip.Click += new System.EventHandler(this.viewInventoryToolStripMenuItem_Click);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -123,6 +123,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Custom Inventory Tracker";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

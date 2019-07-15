@@ -106,6 +106,7 @@
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.okBtn);
             this.Name = "addMaterialTypeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Item";
             this.Load += new System.EventHandler(this.addMaterialTypeForm_Load);
             this.ResumeLayout(false);
