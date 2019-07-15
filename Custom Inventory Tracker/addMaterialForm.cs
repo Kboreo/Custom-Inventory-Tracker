@@ -120,19 +120,28 @@ namespace Custom_Inventory_Tracker
 
                 //For testing/Debugging                
                 SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Kodey\Documents\Inentorytrackertest.mdf;Integrated Security=True;Connect Timeout=30"); //Create Connection to Database            
-
+                
                 try
                 {
-                    decimal size = Convert.ToDecimal(sizeTextBox.Text);
-                    sqlConnection.Open(); //Open Database Connection
-                    SqlCommand cmd = sqlConnection.CreateCommand();   //Create SqlCommand for the 'sqlConnection' Connection
-                    cmd.CommandType = CommandType.Text; //CommandType for cmd is set to text
-                    cmd.CommandText = "insert into invMaterial values('"+this.filamentTypeComboBox.SelectedItem.ToString()+"','"+this.colorTypeComboBox.SelectedItem.ToString() + "','"+this.vendorTypeComboBox.SelectedItem.ToString()+ "','"+size+"')";
-                    cmd.ExecuteNonQuery();  //Execute Command
-                    sqlConnection.Close();  //Close Connection                    
-                    sqlConnection.Close();    //Close Database Connection
+                    decimal size = Convert.ToDecimal(sizeTextBox.Text); //Converts value in size textbox to decimal type and sets size equal to that value
+                    //sqlConnection.Open(); //Open Database Connection
+                    string cmdStr = "INSERT INTO invMaterial (Filament_Type, Color, Vendor, Size) VALUES (@Filament_Type, @Color, @Vendor, @Size)";
+
+                    using (SqlCommand command = new SqlCommand(cmdStr, sqlConnection))  //Loops a SqlCommand using the sqlConnection connection
+                    {
+                        //Adds values to database table using parameters to avoid sql Injections
+                        command.Parameters.AddWithValue("@Filament_Type", this.filamentTypeComboBox.SelectedItem.ToString());
+                        command.Parameters.AddWithValue("@Color", this.colorTypeComboBox.SelectedItem.ToString());
+                        command.Parameters.AddWithValue("@Vendor", this.vendorTypeComboBox.SelectedItem.ToString());
+                        command.Parameters.AddWithValue("@Size", size);
+
+                        sqlConnection.Open(); //Opens Connection to database
+                        command.ExecuteNonQuery(); //Execute Command
+                        sqlConnection.Close();  //Closes connection to database
+                    }
+
                     this.Close();   //Closes Form
-                    MessageBox.Show("Success!");
+                    MessageBox.Show("Success!");       //Message box to let user know items were successfully added to database
                 }
                 catch (SqlException ex) //Exception checking for Sql Connection
                 {
@@ -141,7 +150,7 @@ namespace Custom_Inventory_Tracker
                 catch (Exception ex)    //Exception checking 
                 {
                     MessageBox.Show($"Can not open connection ! Error: {ex.Message}");  //Display Message box showing the message  
-                }                
+                }
             }
         }        
     }
