@@ -80,6 +80,12 @@ namespace Custom_Inventory_Tracker
             addMaterialForm f2 = new addMaterialForm(); //Creates new "Add Material Type" form
             f2.Show();  //Shows "Add Material Type" form
         }
+
+        private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {             
+            addItemForm i2 = new addItemForm(); //Creates new "Add Item" form
+            i2.Show();  //Shows "Add Item" form
+        }
     }
 
     //Class for Global Vars

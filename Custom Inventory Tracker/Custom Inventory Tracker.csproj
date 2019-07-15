@@ -78,6 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addItem.cs" />
+    <Compile Include="addItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addItemForm.Designer.cs">
+      <DependentUpon>addItemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="addMaterialTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="addItemForm.resx">
+      <DependentUpon>addItemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addMaterialTypeForm.resx">
       <DependentUpon>addMaterialTypeForm.cs</DependentUpon>
     </EmbeddedResource>
